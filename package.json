@@ -1,0 +1,43 @@
+{
+  "name": "hotel-offer-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hotel offer aggregation service with supplier fan-out, deduplication and Redis caching.",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "worker:dev": "tsx watch src/worker.ts",
+    "worker": "node dist/worker.js",
+    "test": "jest --runInBand",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@temporalio/client": "^1.11.8",
+    "@temporalio/worker": "^1.11.8",
+    "@temporalio/workflow": "^1.11.8",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.4",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "ts-jest": "^29.2.5"
+  },
+  "allowScripts": {
+    "protobufjs@7.6.6": true,
+    "protobufjs@8.8.1": true,
+    "@swc/core@1.16.21": true,
+    "esbuild@0.28.2": true
+  }
+}
