@@ -9,14 +9,14 @@ export interface SupplierHotel {
 }
 
 export interface HotelOffer {
-  id: string;
-  name: string;
-  normalizedName: string;
-  city: string;
-  price: number;
-  commissionRate: number;
-  supplier: "supplierA" | "supplierB";
-  currency: "INR";
+  id?: string;
+  name?: string;
+  normalizedName?: string;
+  city?: string;
+  price?: number;
+  commissionRate?: number;
+  supplier?: "supplierA" | "supplierB";
+  currency?: "INR";
 }
 
 export interface SupplierResult {
@@ -29,4 +29,12 @@ export interface AggregationResult {
   hotels: HotelOffer[];
   degradedSuppliers: string[];
   fetchedAt: string;
+  pagination?: Pagination;
+}
+
+export interface Pagination {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
 }
